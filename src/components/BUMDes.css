@@ -1,0 +1,56 @@
+.bumdes {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 20px;
+}
+
+/* Services section styling */
+.services {
+  text-align: center;
+  padding: 40px 20px; /* Sesuaikan padding */
+  background-color: #f0fcfc;
+  max-width: 100%;
+  margin-bottom: 40px;
+}
+
+.services h2 {
+  font-size: 2.4rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+  color: #00acc1;
+}
+
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.service-item {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.service-item h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #00796b;
+}
+
+.service-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+}
