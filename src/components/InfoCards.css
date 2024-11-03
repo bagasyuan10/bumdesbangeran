@@ -52,15 +52,7 @@
 }
 .video-container {
   width: 100%;
-  max-width: 739px;
-  aspect-ratio: 16 / 9;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  overflow: hidden;
-}
-.video-container {
-  width: 100%;
-  max-width: 600px;
+  max-width: 845px;
   aspect-ratio: 16 / 9;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
