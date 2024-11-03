@@ -6,49 +6,53 @@ import Kades from "../assets/kepaladesa.jpg";
 import Ketua from "../assets/Sofwan.png";
 import Sekretaris from "../assets/Basori.jpg";
 import Bendahara from "../assets/Jainul.jpg";
+import Kosong from "../assets/Default.webp";
 
 const teamMemberVariants = {
-  hiddenLeft: { opacity: 0, x: -50 },
-  hiddenRight: { opacity: 0, x: 50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.7 } },
+  hiddenLeft: { opacity: 0, x: -100, scale: 0.8 },
+  hiddenRight: { opacity: 0, x: 100, scale: 0.8 },
+  hiddenTop: { opacity: 0, y: -100, scale: 0.8 },
+  hiddenBottom: { opacity: 0, y: 100, scale: 0.8 },
+  visible: { 
+    opacity: 1, 
+    x: 0, 
+    y: 0, 
+    scale: 1, 
+    transition: { duration: 0.7, ease: 'easeOut' } 
+  },
 };
 
-function TeamMember({ src, name, title, description, whatsapp, facebook, instagram, isLeft }) {
+function TeamMember({ src, name, title, description, animationDirection }) {
   const controls = useAnimation();
-  const [ref, inView] = useInView({ triggerOnce: false });
+  const [ref, inView] = useInView({ triggerOnce: true });
 
   React.useEffect(() => {
     if (inView) {
       controls.start('visible');
     } else {
-      controls.start(isLeft ? 'hiddenLeft' : 'hiddenRight');
+      controls.start(animationDirection);
     }
-  }, [controls, inView, isLeft]);
+  }, [controls, inView, animationDirection]);
 
   return (
     <motion.div
       ref={ref}
       className="team-member"
-      initial={isLeft ? 'hiddenLeft' : 'hiddenRight'}
+      initial={animationDirection}
       animate={controls}
       variants={teamMemberVariants}
+      whileHover={{ scale: 1.05, rotate: 2 }}
     >
-      <img src={src} alt={name} />
+      <motion.img 
+        src={src} 
+        alt={name} 
+        className="team-member-img" 
+        whileHover={{ scale: 1.1 }}
+      />
       <div className="member-info">
-        <p className="member-name">{name}</p>
-        <p className="member-title">{title}</p>
-        <p className="member-description">{description}</p>
-        <div className="social-links">
-        <a href={whatsapp} target="_blank" rel="noopener noreferrer">
-          <i className="bi bi-whatsapp"></i>
-        </a>
-        <a href={facebook} target="_blank" rel="noopener noreferrer">
-          <i className="bi bi-facebook"></i>
-        </a>
-        <a href={instagram} target="_blank" rel="noopener noreferrer">
-          <i className="bi bi-instagram"></i>
-        </a>
-        </div>
+        <motion.p className="member-name" whileHover={{ color: '#007acc' }}>{name}</motion.p>
+        <motion.p className="member-title" whileHover={{ color: '#3498db' }}>{title}</motion.p>
+        <motion.p className="member-description" initial={{ opacity: 0.8 }} animate={{ opacity: 1 }}>{description}</motion.p>
       </div>
     </motion.div>
   );
@@ -65,60 +69,42 @@ function TeamSection() {
           name="Al Adzim, M.Si"
           title="Kepala Desa"
           description="Memimpin dan mengawasi seluruh kegiatan BUMDes untuk kesejahteraan desa."
-          whatsapp="https://wa.me/123456789"
-          facebook="https://facebook.com/example"
-          instagram="https://instagram.com/example"
-          isLeft={true}
+          animationDirection="hiddenLeft"
         />
         <TeamMember
           src={Ketua}
           name="Sofwan Hadi"
           title="Ketua BUMDes"
           description="Mengelola operasional BUMDes serta memastikan perkembangan usaha yang berkelanjutan."
-          whatsapp="https://wa.me/123456789"
-          facebook="https://facebook.com/example"
-          instagram="https://instagram.com/example"
-          isLeft={false}
+          animationDirection="hiddenRight"
         />
         <TeamMember
           src={Sekretaris}
           name="Basori"
           title="Sekretaris BUMDes"
           description="Mengelola administrasi dan dokumentasi BUMDes."
-          whatsapp="https://wa.me/123456789"
-          facebook="https://facebook.com/example"
-          instagram="https://instagram.com/example"
-          isLeft={false}
+          animationDirection="hiddenTop"
         />
         <TeamMember
           src={Bendahara}
           name="Jainul"
           title="Bendahara BUMDes"
           description="Mengelola keuangan dan laporan keuangan BUMDes."
-          whatsapp="https://wa.me/123456789"
-          facebook="https://facebook.com/example"
-          instagram="https://instagram.com/example"
-          isLeft={false}
+          animationDirection="hiddenBottom"
         />
         <TeamMember
-          src="image5.jpg"
+          src={Kosong}
           name="H. Suntari"
           title="Pengawas"
           description="Memastikan pengelolaan BUMDes berjalan sesuai peraturan dan rencana kerja."
-          whatsapp="https://wa.me/123456789"
-          facebook="https://facebook.com/example"
-          instagram="https://instagram.com/example"
-          isLeft={false}
+          animationDirection="hiddenLeft"
         />
         <TeamMember
-          src="image6.jpg"
+          src={Kosong}
           name="Zainul Arifin"
           title="Pengawas"
           description="Memastikan pengelolaan BUMDes berjalan sesuai peraturan dan rencana kerja."
-          whatsapp="https://wa.me/123456789"
-          facebook="https://facebook.com/example"
-          instagram="https://instagram.com/example"
-          isLeft={false}
+          animationDirection="hiddenRight"
         />
       </div>
     </section>

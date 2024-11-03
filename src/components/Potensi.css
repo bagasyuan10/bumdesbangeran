@@ -1,130 +1,188 @@
-body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f9f9f9; /* Lighter background for contrast */
+.potensi-header {
+  background: linear-gradient(45deg, #58c5cf, #007acc);
+  /*Gradientforvisualinterest*/text-align: center;
+  padding: 3rem 2rem;
+  color: white;
+  margin-top: 100px;
+  margin-left: 20px;
+  margin-right: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 25px;
 }
 
-.header {
-  background-color: #58c5cf;
-  text-align: center;
-  padding: 2rem;
-  border-bottom: 4px solid #007acc;
-  margin-top: 60px;
+.potensi-header h1 {
+  font-size: 3rem; /* Standout heading */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
 
-.header h1 {
-  color: #333;
-  font-size: 2.5rem; /* Larger font size */
-}
-
-.header-content {
+.potensi-header-content {
   margin-top: 1rem;
-  color: #555; /* Softer text color */
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: auto;
 }
 
+/* Main Potensi Section Styling */
 .potensi-main {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 2rem;
-  padding: 1rem;
+  padding: 2rem;
+  margin-bottom: 50px;
 }
 
+/* Individual Potensi Section Card */
 .potensi-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #fff;
-  border-radius: 12px;
+  background-color: white;
+  border-radius: 16px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   padding: 1.5rem;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 100%; /* Ensure consistent card height */
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
 }
 
-
 .potensi-section:hover {
-  transform: translateY(-5px); /* Lift effect on hover */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+  transform: translateY(-8px) scale(1.02); /* Subtle lift and scale */
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+}
+
+.potensi-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 122, 204, 0.15), rgba(255, 255, 255, 0));
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+
+.potensi-section:hover::before {
+  opacity: 1;
 }
 
 .potensi-section img {
   max-width: 100%;
   width: 100%;
-  height: 200px; /* Sesuaikan tinggi yang diinginkan */
-  object-fit: cover; /* Memastikan gambar memenuhi area tanpa merubah aspek rasio */
-  border-radius: 12px; /* Match card border radius */
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  transition: transform 0.5s ease;
+}
+
+.potensi-section:hover img {
+  transform: scale(1.1); /* Slight zoom effect */
 }
 
 .potensi-content h3 {
   color: #007acc;
   margin-top: 1rem;
-  font-size: 1.8rem; /* Increased heading size */
+  font-size: 1.8rem;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.potensi-section:hover h3 {
+  color: #005f8f; /* Darker shade on hover */
 }
 
 .potensi-content p {
-  color: #666; /* Softer text color */
-  line-height: 1.6; /* Improved readability */
-  margin: 0.5rem 0; /* Spacing adjustments */
+  color: #666;
+  line-height: 1.6;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  padding: 0 10px;
 }
 
-/* Footer Styles */
+/* Footer Styling */
 .blog-footer {
-  background-color: #a2ded0;
-  padding: 40px;
+  background: linear-gradient(45deg, #58c5cf, #007acc);
+  padding: 50px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   text-align: left;
+  color: white;
 }
 
 .footer-logo {
-  max-width: 200px;
+  max-width: 220px;
+  margin-bottom: 1.5rem;
 }
 
 .footer-links {
   display: flex;
-  gap: 20px;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
 .footer-links h3 {
-  font-size: 1rem;
-  margin-bottom: 10px;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #f0f8ff;
 }
 
 .footer-links ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .footer-links ul li {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .footer-links ul li a {
-  color: #333;
+  color: #f0f8ff;
   text-decoration: none;
-  transition: color 0.3s; /* Color transition on hover */
+  font-size: 1rem;
+  transition: color 0.3s;
 }
 
 .footer-links ul li a:hover {
-  color: #007acc; /* Change color on hover */
+  color: #b0e0e6; /* Softer color on hover */
 }
 
 .footer-social {
   display: flex;
-  gap: 10px;
-  font-size: 1.2rem;
+  gap: 15px;
+  font-size: 1.5rem;
+  justify-content: center;
+  margin-top: 1rem;
 }
 
 .footer-social span {
   cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.footer-social span:hover {
+  transform: scale(1.2);
+}
+
+.footer-social span i {
+  color: #fff;
 }
 
 .footer-copyright {
   width: 100%;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 30px;
   font-size: 0.9rem;
+  color: #e0f7fa;
+  padding-top: 15px;
+  border-top: 1px solid #005f8f;
 }

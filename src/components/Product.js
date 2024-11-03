@@ -41,6 +41,7 @@ const products = [
 const Product = () => {
     return (
         <div className="product-display">
+            <ProductHeader />
             <h2>Produk Unggulan BUMDes Bangeran</h2>
             <div className="product-grid">
                 {products.map(product => (
@@ -69,6 +70,15 @@ const Product = () => {
                     </div>
                 ))}
             </div>
+        </div>
+    );
+};
+
+const ProductHeader = () => {
+    return (
+        <div className="product-header">
+            <h1>Rasakan Keaslian Rasa Product BUMDes Bangeran!</h1>
+            <p>Temukan produk berkualitas yang dihasilkan dari tangan terampil petani lokal. Dari bumbu pedas hingga sambal yang menggugah selera, setiap produk adalah hasil cinta dan kerja keras.</p>
         </div>
     );
 };

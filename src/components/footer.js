@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import "./footer.css";
 
 function Footer() {
@@ -15,9 +16,9 @@ function Footer() {
                             <ul className="list-unstyled social">
                                 <li><a href="https://wa.me/6281515549769" target="_blank" rel="noopener noreferrer"><i className="bi bi-whatsapp"></i></a></li>
                                 <li><a href="mailto:bumdesbangeran@gmail.com"><i className="bi bi-envelope"></i></a></li>
-                                <li><a href="https://instagram.com/your_instagram_username" target="_blank" rel="noopener noreferrer"><i className="bi bi-instagram"></i></a></li>
-                                <li><a href="https://twitter.com/your_twitter_username" target="_blank" rel="noopener noreferrer"><i className="bi bi-twitter"></i></a></li>
-                                <li><a href="https://facebook.com/your_facebook_username" target="_blank" rel="noopener noreferrer"><i className="bi bi-facebook"></i></a></li>
+                                <li><a href="https://www.instagram.com/bumdes_bangeran" target="_blank" rel="noopener noreferrer"><i className="bi bi-instagram"></i></a></li>
+                                <li><a href="https://x.com/BUMDes_Bangeran?t=81ud6-95FFJ0o9wioFAhkg&s=09" target="_blank" rel="noopener noreferrer"><i className="bi bi-twitter"></i></a></li>
+                                <li><a href="https://www.facebook.com/share/uYZPwQmu6idEveuY/" target="_blank" rel="noopener noreferrer"><i className="bi bi-facebook"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -40,14 +41,13 @@ function Footer() {
                             <h3>Links</h3>
                             <ul className="list-unstyled links">
                                 <li><a href="">Our Vision</a></li>
-                                <li><a href="/about.html">About us</a></li>
+                                <li><Link to="/bumdes">About us</Link></li> {/* Perbaiki penutupan tag Link */}
                                 <li><a href="#">Contact us</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                {/* Copyright Section */}
                 <div className="copyright">
                     <p>
                         Copyright &copy; 

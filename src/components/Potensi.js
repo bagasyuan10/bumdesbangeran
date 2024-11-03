@@ -44,7 +44,7 @@ const PotensiSection = ({ title, description, imageUrl, isLeft }) => {
 const Potensi = () => {
   return (
     <div>
-      <Header />
+      <PotensiHeader />
       <main className="potensi-main">
         <PotensiSection
           title="Cabai"
@@ -93,7 +93,7 @@ const Potensi = () => {
   );
 };
 
-const Header = () => {
+const PotensiHeader = () => {
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: false });
 
@@ -108,26 +108,13 @@ const Header = () => {
   return (
     <motion.header
       ref={ref}
-      className="header"
+      className="potensi-header"
       initial={{ opacity: 0, y: -20 }}
       animate={controls}
     >
       <h1>Potensi Unggulan Desa</h1>
-      <div className="header-content">
-        <p>
-          Potensi unggulan meliputi hasil-hasil pertanian seperti jagung, kacang-kacangan, tumbuhan sayuran kelor, cabai, mangga, dan lain-lain. 
-        </p>
-        <p>
-          Di samping pertanian, peternakan seperti sapi, kambing, ayam, atau bebek juga bisa menjadi potensi unggulan di desa ini. 
-          Desa Bangeran memiliki sumber daya air yang memadai. 
-        </p>
-        <p>
-          Ini tidak hanya memenuhi kebutuhan pangan lokal tetapi juga dapat dijual ke luar daerah, menambah pendapatan masyarakat. 
-        </p>
-        <p>
-          Dengan pengembangan yang tepat, potensi unggulan Desa Bangeran dapat meningkatkan perekonomian, menyediakan lapangan kerja, 
-          dan melestarikan kekayaan budaya serta lingkungan setempat.
-        </p>
+      <div className="potensi-header-content">
+        <p>Potensi unggulan meliputi hasil-hasil pertanian seperti jagung, kacang-kacangan, tumbuhan sayuran kelor, cabai, mangga, dan lain-lain. Di samping pertanian, peternakan seperti sapi, kambing, ayam, atau bebek juga bisa menjadi potensi unggulan di desa ini. Desa Bangeran memiliki sumber daya air yang memadai. Ini tidak hanya memenuhi kebutuhan pangan lokal tetapi juga dapat dijual ke luar daerah, menambah pendapatan masyarakat. Dengan pengembangan yang tepat, potensi unggulan Desa Bangeran dapat meningkatkan perekonomian, menyediakan lapangan kerja, dan melestarikan kekayaan budaya serta lingkungan setempat.</p>
       </div>
     </motion.header>
   );

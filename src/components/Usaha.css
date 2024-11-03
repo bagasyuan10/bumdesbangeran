@@ -1,0 +1,109 @@
+.usaha-container {
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #e0f7fa, #f1f8e9, #fff3e0);
+    margin-top: 75px;
+}
+
+.usaha-container h1 {
+    font-size: 2.5em;
+    color: #00695c;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 15px;
+    width: 280px;
+    padding: 25px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    border-top: 3px solid #00796b;
+}
+
+.card:hover {
+    transform: scale(1.07) translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.card h2 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    font-weight: 600;
+    position: relative;
+    text-align: center;
+}
+
+.card h2:after {
+    content: "";
+    width: 40px;
+    height: 4px;
+    background-color: #00796b;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 4px;
+}
+
+.logos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+
+.logo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75px;
+    text-align: center;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.logo-item:hover {
+    transform: translateY(-6px);
+}
+
+.logo-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 3px solid #eeeeee;
+    transition: border-color 0.4s ease, transform 0.4s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo-item:hover .logo-image {
+    border-color: #00796b;
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.logo-item p {
+    font-size: 0.95em;
+    color: #555;
+    margin-top: 6px;
+    font-weight: 500;
+}
+
+.logo-item:hover p {
+    color: #00796b;
+    font-weight: 600;
+}

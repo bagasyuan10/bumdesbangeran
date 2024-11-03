@@ -7,9 +7,10 @@ import TeamSection from './components/TeamSection';
 import StepsSection from './components/StepsSection';
 import BUMDes from './components/BUMDes';
 import Potensi from './components/Potensi';
-import Footer from './components/footer'
-import ContactUs from './components/ContactUs'; // Import ContactUs component
+import Footer from './components/footer';
+import ContactUs from './components/ContactUs';
 import Product from './components/Product';
+import Usaha from './components/Usaha'; // Import Usaha component
 import './App.css';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/product" element={<Product />} />
         <Route path="/perangkat" element={<TeamSection />} />
+        <Route path="/usaha" element={<Usaha />} /> {/* Tambahkan route Usaha */}
       </Routes>
 
       {/* Conditionally render components for main page */}
