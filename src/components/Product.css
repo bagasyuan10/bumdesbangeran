@@ -7,10 +7,6 @@
     text-align: center;
     margin-top: 75px;
     animation: fadeIn 0.5s ease-in-out;
-    -webkit-border-radius: 25px;
-    -moz-border-radius: 25px;
-    -ms-border-radius: 25px;
-    -o-border-radius: 25px;
 }
 
 @keyframes fadeIn {
@@ -37,7 +33,9 @@
 }
 
 .product-display {
-    max-width: 1200px;
+    width: 100%; /* Set the width to 100% */
+    min-height: 100vh; /* Set minimum height to 92vh */
+    max-width: 1200px; /* Keep the max-width for larger screens */
     margin: 0 auto;
     padding: 20px;
     text-align: center;
