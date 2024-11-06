@@ -14,7 +14,7 @@ function Navbar() {
     <nav className="navbar">
       <div className="logo">
         <img src={logo} alt="Logo Desa Bangeran" />
-        <span>BUMDes Bangeran</span>
+        <span>BUMDes BANGJOZZ</span>
       </div>
       <div className={`nav-links ${isOpen ? "open" : ""}`}>
         <ul>
